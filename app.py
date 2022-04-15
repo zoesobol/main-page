@@ -1,9 +1,12 @@
 from flask import Flask
 app = Flask(__name__)
 
-@app.route("/")
+@app.route("/api/hello")
 def hello():
-    return "<h1>This is supposed to be my home page.</h1>"
+    return {
+        "status": "success",
+        "message": "This is supposed to be my home page."
+    }
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0')
